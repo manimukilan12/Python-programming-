@@ -1,0 +1,17 @@
+# List of tuples containing share information
+shares_data = [
+    ("Company A", "2023-01-15", 50.25),
+    ("Company B", "2022-11-30", 35.75),
+    ("Company C", "2024-03-10", 40.50),
+    # Add more shares as needed
+]
+
+# Example of accessing the data
+for share in shares_data:
+    share_name, purchase_date, cost_price = share
+    print(f"Share: {share_name}, Purchase Date: {purchase_date}, Cost Price: ${cost_price}")
+
+output:
+Share: Company A, Purchase Date: 2023-01-15, Cost Price: $50.25
+Share: Company B, Purchase Date: 2022-11-30, Cost Price: $35.75
+Share: Company C, Purchase Date: 2024-03-10, Cost Price: $40.5
