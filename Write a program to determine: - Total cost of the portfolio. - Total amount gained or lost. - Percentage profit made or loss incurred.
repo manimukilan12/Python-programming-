@@ -1,0 +1,35 @@
+def calculate_portfolio_cost(portfolio):
+    total_cost = sum(stock['price'] * stock['quantity'] for stock in portfolio)
+    return total_cost
+
+def calculate_gain_or_loss(portfolio):
+    total_cost = calculate_portfolio_cost(portfolio)
+    total_value = sum(stock['current_price'] * stock['quantity'] for stock in portfolio)
+    gain_or_loss = total_value - total_cost
+    return gain_or_loss
+
+def calculate_percentage_profit_or_loss(portfolio):
+    total_cost = calculate_portfolio_cost(portfolio)
+    gain_or_loss = calculate_gain_or_loss(portfolio)
+    percentage = (gain_or_loss / total_cost) * 100
+    return percentage
+
+# Example portfolio
+portfolio = [
+    {'name': 'AAPL', 'price': 150, 'quantity': 10, 'current_price': 160},
+    {'name': 'GOOG', 'price': 2000, 'quantity': 5, 'current_price': 2200},
+    {'name': 'MSFT', 'price': 300, 'quantity': 20, 'current_price': 320}
+]
+
+total_cost = calculate_portfolio_cost(portfolio)
+gain_or_loss = calculate_gain_or_loss(portfolio)
+percentage_profit_or_loss = calculate_percentage_profit_or_loss(portfolio)
+
+print("Total cost of the portfolio:", total_cost)
+print("Total amount gained or lost:", gain_or_loss)
+print("Percentage profit made or loss incurred:", percentage_profit_or_loss, "%")
+
+output:
+Total cost of the portfolio: 17500
+Total amount gained or lost: 1500
+Percentage profit made or loss incurred: 8.571428571428571 %
